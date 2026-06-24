@@ -57,14 +57,11 @@
       <!-- ===== JOURNEY: maze -> calm ===== -->
       <section class="journey" id="top-journey">
         <div class="journey__sticky">
-          <!-- Scene 1: the chaos of menus -->
-          <div class="scene scene--maze" id="scene-maze" aria-hidden="true">
-            <div class="scene__img" style="background-image:url('./assets/maze.jpg')"></div>
-            <div class="scene__veil scene__veil--maze"></div>
-          </div>
-          <!-- Scene 2: calm forest -->
-          <div class="scene scene--forest" id="scene-forest" aria-hidden="true">
-            <div class="scene__img" style="background-image:url('./assets/forest.jpg')"></div>
+          <!-- Background video: maze → forest, complexity → simplicity -->
+          <div class="scene scene--video" aria-hidden="true">
+            <video class="scene__video" autoplay muted loop playsinline poster="./assets/forest.jpg">
+              <source src="./assets/journey.mp4" type="video/mp4" />
+            </video>
             <div class="scene__veil scene__veil--forest"></div>
           </div>
 

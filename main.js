@@ -41,9 +41,9 @@
     var p = denom > 0 ? -rect.top / denom : 0;
     p = p < 0 ? 0 : p > 1 ? 1 : p;
 
-    sMaze.style.opacity = 1 - seg(p, 0.34, 0.6);
+    if (sMaze) sMaze.style.opacity = 1 - seg(p, 0.34, 0.6);
     if (mazeImg) mazeImg.style.transform = "scale(" + (1 + 0.18 * seg(p, 0, 0.62)) + ")";
-    sForest.style.opacity = seg(p, 0.32, 0.62);
+    if (sForest) sForest.style.opacity = seg(p, 0.32, 0.62);
     if (forestImg) forestImg.style.transform = "scale(" + (1.16 - 0.16 * seg(p, 0.3, 1)) + ")";
 
     var f1 = seg(p, 0.08, 0.24);
