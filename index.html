@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saathi — One voice. No maze.</title>
+    <meta
+      name="description"
+      content="Saathi is a voice-first accessibility layer for the phone you already own. Say what you want — call, message, pay, remind — and Saathi shows you, in plain words, exactly what it's about to do before it does it. On-device. Offline. Private."
+    />
+    <meta name="theme-color" content="#0e0f0c" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Saathi — One voice. No maze." />
+    <meta
+      property="og:description"
+      content="A voice-first accessibility layer for phones people already own. ~10 things done well, fully offline except payments, with a visible 'here's what I'm about to do' step on every action."
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230e0f0c'/%3E%3Ccircle cx='50' cy='50' r='22' fill='none' stroke='%23e9b04b' stroke-width='8'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%232f8f6b'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <!-- ===== NAV ===== -->
+    <header class="nav" id="nav">
+      <div class="wrap nav__inner">
+        <a class="brand" href="#top" aria-label="Saathi home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 100 100" width="34" height="34">
+              <circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" stroke-width="9" />
+              <circle cx="50" cy="50" r="11" fill="var(--green)" />
+            </svg>
+          </span>
+          <span class="brand__word">saathi<span class="brand__deva"> · साथी</span></span>
+        </a>
+        <nav class="nav__links" aria-label="Primary">
+          <a href="#how">How it works</a>
+          <a href="#does">What it does</a>
+          <a href="#safety">Safety</a>
+          <a href="#families">For families</a>
+        </nav>
+        <a class="btn btn--sm" href="#access">Get early access</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- ===== HERO ===== -->
+      <section class="hero">
+        <div class="hero__glow" aria-hidden="true"></div>
+        <div class="wrap hero__grid">
+          <div class="hero__copy reveal">
+            <p class="eyebrow"><span class="dot"></span> Voice-first phone layer</p>
+            <h1 class="display">
+              One&nbsp;voice.<br />
+              <span class="accent">No&nbsp;maze.</span>
+            </h1>
+            <p class="lede">
+              Saathi loads onto the phone people already own. Say what you want — Saathi
+              shows you, in plain words, exactly what it's about to do, then waits for your
+              yes. <strong>On-device. Offline. Private.</strong>
+            </p>
+            <div class="hero__cta">
+              <a class="btn" href="#access">Get early access</a>
+              <a class="btn btn--ghost" href="#how">See how it works →</a>
+            </div>
+            <ul class="hero__chips">
+              <li>~10 things, done well</li>
+              <li>Works in dead zones</li>
+              <li>Data never leaves the phone</li>
+            </ul>
+          </div>
+
+          <!-- Product visual: the "trust card" -->
+          <div class="hero__visual reveal" data-delay="1">
+            <div class="phone">
+              <div class="phone__notch" aria-hidden="true"></div>
+              <div class="phone__screen">
+                <p class="card__listen"><span class="pulse"></span> Listening…</p>
+                <p class="card__heard">You said <em>“call Ramesh”</em></p>
+                <div class="trustcard">
+                  <div class="trustcard__photo" aria-hidden="true">R</div>
+                  <p class="trustcard__line">Call <strong>Ramesh</strong>?</p>
+                  <div class="ring" aria-hidden="true">
+                    <svg viewBox="0 0 80 80">
+                      <circle class="ring__bg" cx="40" cy="40" r="34" />
+                      <circle class="ring__fg" cx="40" cy="40" r="34" />
+                    </svg>
+                    <span class="ring__num">3</span>
+                  </div>
+                  <div class="trustcard__btns">
+                    <button class="tc tc--yes">✓ HAAN</button>
+                    <button class="tc tc--no">✗ NAHI</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="phone__caption">The screen is a mirror, not a menu.</p>
+          </div>
+        </div>
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee__track">
+            <span>Call</span><span>·</span><span>Message</span><span>·</span><span>Remind</span
+            ><span>·</span><span>Alarm</span><span>·</span><span>Torch</span><span>·</span
+            ><span>Open app</span><span>·</span><span>Play media</span><span>·</span
+            ><span>Time</span><span>·</span><span>UPI</span><span>·</span><span>SOS</span
+            ><span>·</span><span>Call</span><span>·</span><span>Message</span><span>·</span
+            ><span>Remind</span><span>·</span><span>Alarm</span><span>·</span><span>Torch</span
+            ><span>·</span><span>Open app</span><span>·</span><span>Play media</span><span>·</span
+            ><span>Time</span><span>·</span><span>UPI</span><span>·</span><span>SOS</span><span>·</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PROBLEM ===== -->
+      <section class="band" id="problem">
+        <div class="wrap">
+          <p class="eyebrow center"><span class="dot"></span> The problem</p>
+          <h2 class="section-title center">
+            People don't get lost in <span class="strike">tasks</span>.<br />
+            They get lost in the <span class="accent">menus</span>.
+          </h2>
+          <div class="stats">
+            <div class="stat reveal">
+              <span class="stat__num" data-count="85">0</span><span class="stat__unit">%</span>
+              <p>of the target cohort can't read or navigate the menu maze comfortably.</p>
+            </div>
+            <div class="stat reveal" data-delay="1">
+              <span class="stat__num" data-count="74">0</span><span class="stat__unit">%</span>
+              <p>of fintech users say a design they don't trust stops them paying at all.</p>
+            </div>
+            <div class="stat reveal" data-delay="2">
+              <span class="stat__num">1</span><span class="stat__unit">intent</span>
+              <p>Voice collapses the whole maze into a single spoken intent → one action.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== HOW IT WORKS ===== -->
+      <section class="band band--alt" id="how">
+        <div class="wrap">
+          <p class="eyebrow"><span class="dot"></span> How it works</p>
+          <h2 class="section-title">Model proposes. You dispose.</h2>
+          <p class="section-sub">
+            Every path — speaking or tapping — lands on the same plain-language card. Nothing
+            irreversible happens without your yes.
+          </p>
+          <ol class="steps">
+            <li class="step reveal">
+              <span class="step__no">01</span>
+              <h3>Speak</h3>
+              <p>
+                Press and hold one big button and say it in your own words — Hindi, English, or
+                a mix. A local <strong>Gemma</strong> model turns it into one structured action.
+              </p>
+            </li>
+            <li class="step reveal" data-delay="1">
+              <span class="step__no">02</span>
+              <h3>See</h3>
+              <p>
+                The screen shows the action in one big sentence — who, what, how much — with
+                the photo of the person you're reaching. No jargon, no menus.
+              </p>
+            </li>
+            <li class="step reveal" data-delay="2">
+              <span class="step__no">03</span>
+              <h3>Confirm</h3>
+              <p>
+                You say yes, or tap <strong>HAAN</strong>. Risky things ask twice. Anything can
+                be stopped. Then it returns home — there's nowhere to get lost.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ===== WHAT IT DOES ===== -->
+      <section class="band" id="does">
+        <div class="wrap">
+          <p class="eyebrow"><span class="dot"></span> What it does</p>
+          <h2 class="section-title">Ten things, done well.</h2>
+          <p class="section-sub">
+            No hidden tenth menu. If it can't do something safely, it says so — plainly — instead
+            of dumping ten web results.
+          </p>
+          <div class="tiles">
+            <div class="tile reveal"><span class="tile__ico">📞</span><span>Call</span></div>
+            <div class="tile reveal" data-delay="1"><span class="tile__ico">💬</span><span>Message</span></div>
+            <div class="tile reveal" data-delay="2"><span class="tile__ico">⏰</span><span>Alarm &amp; timer</span></div>
+            <div class="tile reveal"><span class="tile__ico">🗓️</span><span>Remind</span></div>
+            <div class="tile reveal" data-delay="1"><span class="tile__ico">🔦</span><span>Torch</span></div>
+            <div class="tile reveal" data-delay="2"><span class="tile__ico">📲</span><span>Open app</span></div>
+            <div class="tile reveal"><span class="tile__ico">🎵</span><span>Play media</span></div>
+            <div class="tile reveal" data-delay="1"><span class="tile__ico">🕐</span><span>Time &amp; date</span></div>
+            <div class="tile tile--money reveal" data-delay="2"><span class="tile__ico">₹</span><span>UPI pay</span></div>
+            <div class="tile tile--sos reveal"><span class="tile__ico">⛑️</span><span>SOS</span></div>
+          </div>
+          <p class="micro">
+            Payments hand off to your own GPay / PhonePe for the final PIN — the irreversible step
+            stays in the bank-grade app, where it belongs.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== SAFETY MODEL ===== -->
+      <section class="band band--dark" id="safety">
+        <div class="wrap safety__grid">
+          <div class="reveal">
+            <p class="eyebrow"><span class="dot"></span> The safety model is the product</p>
+            <h2 class="section-title">
+              Predictability beats <span class="accent">capability</span>.
+            </h2>
+            <p class="section-sub">
+              For someone afraid of getting it wrong, knowing <em>exactly</em> what will happen
+              matters more than doing everything. Every action is sorted into a tier — and the
+              riskier it is, the more it asks of you.
+            </p>
+            <a class="btn btn--ghost" href="#access">Bring it to your family →</a>
+          </div>
+          <div class="tiers reveal" data-delay="1">
+            <div class="tier">
+              <span class="tier__tag">T0</span>
+              <div><strong>Reversible</strong><p>Announce it, 3-second cancel. (torch, time)</p></div>
+            </div>
+            <div class="tier">
+              <span class="tier__tag">T1</span>
+              <div><strong>Private</strong><p>Spoken confirm + cancel. (calls, messages)</p></div>
+            </div>
+            <div class="tier tier--money">
+              <span class="tier__tag">T2</span>
+              <div><strong>Money &amp; location</strong><p>Double consent — say <em>and</em> tap. Never auto-runs.</p></div>
+            </div>
+            <div class="tier tier--sos">
+              <span class="tier__tag">T3</span>
+              <div><strong>Emergency</strong><p>SOS fires instantly. No friction when it counts.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== TWO AUDIENCES ===== -->
+      <section class="band" id="families">
+        <div class="wrap">
+          <p class="eyebrow center"><span class="dot"></span> One brand, two dialects</p>
+          <h2 class="section-title center">Built for the parent. Trusted by the family.</h2>
+          <div class="duo">
+            <article class="duo__card duo__card--warm reveal">
+              <h3>The parent's phone</h3>
+              <p class="duo__tag">Warm · large · photo-rich · voice-first</p>
+              <ul>
+                <li>One press-and-hold talk button on every screen.</li>
+                <li>Six fixed photo tiles — “Ramesh is always top-left.”</li>
+                <li>Big plain sentences, fat buttons, slow motion.</li>
+                <li>Every change is spoken, shown, and felt.</li>
+              </ul>
+            </article>
+            <article class="duo__card duo__card--cool reveal" data-delay="1">
+              <h3>The family companion</h3>
+              <p class="duo__tag">Calm · clean · dashboard · trust-signalled</p>
+              <ul>
+                <li>One quiet feed: “Mummy called Beti at 9:10am.”</li>
+                <li>Set up contacts, photos and the home grid in minutes.</li>
+                <li>Status, not surveillance — the parent stays in charge.</li>
+                <li>See what stays on-device. Trust is built into the UI.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PRIVACY STRIP ===== -->
+      <section class="strip">
+        <div class="wrap strip__inner reveal">
+          <div class="strip__item"><strong>On-device</strong><span>A local Gemma model. No cloud round-trip.</span></div>
+          <div class="strip__item"><strong>Offline</strong><span>Works on dead-zone networks — payments aside.</span></div>
+          <div class="strip__item"><strong>Private</strong><span>Family data never leaves the phone.</span></div>
+        </div>
+      </section>
+
+      <!-- ===== CTA / EARLY ACCESS ===== -->
+      <section class="band band--cta" id="access">
+        <div class="wrap cta__inner">
+          <h2 class="display cta__title">Give them<br /><span class="accent">their phone back.</span></h2>
+          <p class="section-sub center">
+            We're rolling out Saathi to a first group of families in India and the UAE. Leave a
+            line and we'll reach out.
+          </p>
+          <form class="signup" id="signup" novalidate>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="you@email.com"
+              aria-label="Email address"
+              required
+            />
+            <button class="btn" type="submit">Request early access</button>
+          </form>
+          <p class="signup__note" id="signup-note" role="status"></p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <div class="brand">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 100 100" width="28" height="28">
+              <circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" stroke-width="9" />
+              <circle cx="50" cy="50" r="11" fill="var(--green)" />
+            </svg>
+          </span>
+          <span class="brand__word">saathi</span>
+        </div>
+        <p class="footer__tag">A voice-first accessibility layer. Elderly-first, for everyone.</p>
+        <p class="footer__legal">© 2026 Saathi. Built with care.</p>
+      </div>
+    </footer>
+
+    <script src="./main.js" defer></script>
+  </body>
+</html>
