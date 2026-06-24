@@ -126,6 +126,7 @@ em { font-style: italic; }
   position: sticky;
   top: 0;
   z-index: 50;
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   background: color-mix(in srgb, var(--ink) 72%, transparent);
   border-bottom: 1px solid transparent;
@@ -339,6 +340,104 @@ em { font-style: italic; }
 .footer__inner { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; text-align: center; }
 .footer__tag { color: var(--muted); }
 .footer__legal { color: var(--muted); font-size: 0.85rem; opacity: 0.7; }
+
+/* ============================================================
+   JOURNEY  —  scroll-driven maze → forest
+   ============================================================ */
+.journey { position: relative; height: 340vh; background: var(--ink); }
+.journey__sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+
+.scene { position: absolute; inset: 0; }
+.scene--maze { opacity: 1; }
+.scene--forest { opacity: 0; }
+.scene__img {
+  position: absolute; inset: -6%;
+  background-size: cover; background-position: center;
+  will-change: transform, opacity;
+}
+.scene__veil { position: absolute; inset: 0; }
+.scene__veil--maze {
+  background: radial-gradient(120% 120% at 50% 38%, rgba(14, 15, 12, 0.5), rgba(14, 15, 12, 0.93));
+}
+.scene__veil--forest {
+  background: linear-gradient(180deg, rgba(14, 15, 12, 0.35), rgba(14, 15, 12, 0.4) 45%, rgba(14, 15, 12, 0.82));
+}
+
+.journey__copy { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+.jc {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(100% - 2.4rem, 920px);
+  text-align: center;
+}
+.jc .btn { pointer-events: auto; margin-top: 1.4rem; }
+.jc--2, .jc--3 { opacity: 0; }
+.journey .display { font-size: clamp(3rem, 11vw, 7.5rem); }
+.journey .lede { margin-inline: auto; color: var(--cream); }
+.journey .muted { color: var(--muted); -webkit-text-fill-color: var(--muted); }
+
+.scroll-cue {
+  position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
+  z-index: 4; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted);
+}
+.scroll-cue__mouse { width: 22px; height: 34px; border: 2px solid var(--muted); border-radius: 12px; position: relative; }
+.scroll-cue__mouse::after {
+  content: ""; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+  width: 3px; height: 7px; border-radius: 2px; background: var(--muted); animation: wheel 1.6s infinite;
+}
+@keyframes wheel { 0% { opacity: 1; top: 6px; } 60% { opacity: 0; top: 16px; } 100% { opacity: 0; } }
+
+/* ---------- Product moment: parent photo + phone ---------- */
+.hero__visual { position: relative; display: block; min-height: 480px; }
+@media (max-width: 900px) { .hero__visual { min-height: 520px; margin-top: 1rem; } }
+.parentshot {
+  width: min(86%, 380px); aspect-ratio: 4 / 5; border-radius: 26px; overflow: hidden;
+  border: 1px solid var(--line); box-shadow: 0 40px 80px -36px rgba(0, 0, 0, 0.9);
+}
+.parentshot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero__visual .phone { position: absolute; right: 0; bottom: 34px; width: min(188px, 48%); }
+.hero__visual .phone__caption { position: absolute; left: 0.2rem; bottom: 2px; max-width: 50%; }
+
+/* ============================================================
+   FAMILY CONTROL / OBSERVATION
+   ============================================================ */
+.control__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+@media (max-width: 900px) { .control__grid { grid-template-columns: 1fr; } }
+.ctrl { list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-top: 0.4rem; }
+.ctrl li { position: relative; padding-left: 1.7rem; color: var(--muted); }
+.ctrl li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--green-bright); font-weight: 700; }
+
+.control__visual { position: relative; }
+.familyshot { margin: 0; border-radius: 24px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 3 / 2; box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.9); }
+.familyshot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.dash {
+  position: absolute; right: -3%; bottom: -12%; width: min(264px, 74%);
+  background: color-mix(in srgb, var(--ink-2) 92%, transparent);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--line); border-radius: 18px; padding: 1rem 1.05rem;
+  box-shadow: 0 30px 60px -28px rgba(0, 0, 0, 0.95);
+}
+@media (max-width: 900px) {
+  .dash { position: static; width: 100%; margin-top: 1.1rem; right: auto; bottom: auto; }
+}
+.dash__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; }
+.dash__title { font-weight: 700; font-size: 0.9rem; }
+.dash__ok { font-size: 0.66rem; font-weight: 700; color: var(--green-bright); border: 1px solid color-mix(in srgb, var(--green) 60%, var(--line)); padding: 0.16rem 0.55rem; border-radius: 999px; }
+.dash__feed { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.dash__feed li { display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; color: var(--cream); }
+.dash__time { min-width: 2.6ch; font-size: 0.74rem; color: var(--muted); opacity: 0.8; font-variant-numeric: tabular-nums; }
+.dash__txt { flex: 1; }
+.dash__dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.dash__dot--ok { background: var(--green-bright); }
+.dash__dot--money { background: var(--gold); }
+.dash__perms { margin-top: 0.85rem; border-top: 1px solid var(--line); padding-top: 0.75rem; }
+.dash__permlbl { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+.dash__toggles { display: flex; gap: 0.4rem; margin-top: 0.5rem; flex-wrap: wrap; }
+.tog { font-size: 0.7rem; padding: 0.25rem 0.6rem; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+.tog--on { background: color-mix(in srgb, var(--green) 22%, var(--ink-3)); border-color: var(--green); color: var(--cream); }
 
 /* ---------- Reveal animation ---------- */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }

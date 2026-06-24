@@ -11,6 +11,63 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
+  /* ---- Journey: scroll-driven maze → forest crossfade ---- */
+  var journey = document.getElementById("top-journey");
+  var sMaze = document.getElementById("scene-maze");
+  var sForest = document.getElementById("scene-forest");
+  var cue = document.getElementById("scroll-cue");
+  var jc1 = document.querySelector(".jc--1");
+  var jc2 = document.querySelector(".jc--2");
+  var jc3 = document.querySelector(".jc--3");
+  var mazeImg = sMaze ? sMaze.querySelector(".scene__img") : null;
+  var forestImg = sForest ? sForest.querySelector(".scene__img") : null;
+
+  // map p into 0..1 across [a,b], clamped
+  var seg = function (p, a, b) {
+    var t = (p - a) / (b - a);
+    return t < 0 ? 0 : t > 1 ? 1 : t;
+  };
+  var ty = function (el, op, yPx) {
+    el.style.opacity = op;
+    el.style.transform = "translate(-50%, calc(-50% + " + yPx + "px))";
+  };
+
+  var ticking = false;
+  var updateJourney = function () {
+    ticking = false;
+    if (!journey) return;
+    var rect = journey.getBoundingClientRect();
+    var denom = rect.height - window.innerHeight;
+    var p = denom > 0 ? -rect.top / denom : 0;
+    p = p < 0 ? 0 : p > 1 ? 1 : p;
+
+    sMaze.style.opacity = 1 - seg(p, 0.34, 0.6);
+    if (mazeImg) mazeImg.style.transform = "scale(" + (1 + 0.18 * seg(p, 0, 0.62)) + ")";
+    sForest.style.opacity = seg(p, 0.32, 0.62);
+    if (forestImg) forestImg.style.transform = "scale(" + (1.16 - 0.16 * seg(p, 0.3, 1)) + ")";
+
+    var f1 = seg(p, 0.08, 0.24);
+    ty(jc1, 1 - f1, -42 * f1);
+    var f2in = seg(p, 0.3, 0.43),
+      f2out = seg(p, 0.54, 0.66);
+    ty(jc2, f2in * (1 - f2out), 30 - 60 * (f2in * 0.5 + f2out * 0.5));
+    var f3 = seg(p, 0.66, 0.82);
+    ty(jc3, f3, 30 - 30 * f3);
+
+    if (cue) cue.style.opacity = 1 - seg(p, 0.02, 0.12);
+  };
+  var onJourneyScroll = function () {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(updateJourney);
+    }
+  };
+  if (journey) {
+    window.addEventListener("scroll", onJourneyScroll, { passive: true });
+    window.addEventListener("resize", onJourneyScroll, { passive: true });
+    updateJourney();
+  }
+
   /* Scroll reveal via IntersectionObserver. */
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var reveals = document.querySelectorAll(".reveal");
